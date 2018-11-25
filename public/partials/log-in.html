@@ -1,0 +1,17 @@
+<modal id="register-modal">
+  <div class="modal-container" ng-click="displayHide()">
+      <div class="registration">
+        <div class="close-modal">
+            <button class="cancel-modal" ng-click="ctrl.changeInclude('home')"><span class="lnr lnr-cross"></span>
+            </button>
+            </div>
+            <form ng-submit="ctrl.register()">
+                <h2>Log In <br> and <br> Confess</h2>
+                <input type="text" placeholder="username" ng-model="ctrl.username" />
+                <input type="password" placeholder="password" ng-model="ctrl.password" />
+                <input type="submit" value="REGISTER">
+                <button ng-click="ctrl.changeInclude('register')">Not a member?<br> Register</button>
+              </form><br>
+            </div>
+</div>
+</modal>

@@ -18,4 +18,30 @@ console.log(this.changeNavPath);
 
     const controller = this;
 
+    this.register = function(){
+  console.log("hey");
+    $http({
+        method:'POST',
+        url: '/sessions',
+        data: {
+            username: this.username,
+            password: this.password
+        }
+    }).then(function(response){
+      controller.loggedInUser = response.data.username;
+      // controller.changeInclude
+      // controller.changeNavPath
+        console.log(response);
+        controller.username = null,
+        controller.password = null
+    }, function(){
+        console.log('error');
+    });
+}
+this.showModal = true;
+
+this.displayHide = () => {
+  this.showModal = !this.showModal;
+}
+
 }]);
