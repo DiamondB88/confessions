@@ -18,30 +18,72 @@ console.log(this.changeNavPath);
 
     const controller = this;
 
-    this.register = function(){
-  console.log("hey");
-    $http({
-        method:'POST',
-        url: '/sessions',
-        data: {
-            username: this.username,
-            password: this.password
-        }
-    }).then(function(response){
-      controller.loggedInUser = response.data.username;
-      // controller.changeInclude
-      // controller.changeNavPath
-        console.log(response);
-        controller.username = null,
-        controller.password = null
-    }, function(){
-        console.log('error');
-    });
-}
+
+
 this.showModal = true;
 
 this.displayHide = () => {
   this.showModal = !this.showModal;
 }
 
+this.confess= function(){
+    $http({
+      method: 'POST',
+      url: '/confession',
+      data: {
+        category: this.category,
+        confession: this.confession
+      }
+    }).then(response=>{
+      controller.getConfession();
+      controller.changeInclude('home')
+      controller.category = null;
+      controller.confession = null;
+    }, function(){
+        console.log('error');
+      });
+  };
+
+this.getConfession = function(){
+  $http({
+      method: 'GET',
+      url: '/confessions',
+    }).then(response=>{
+      controller.confessions = response.data
+      console.log(response.data);
+    }, function(){
+        console.log('error');
+      });
+}
+
+this.deleteConfession = function(confession){
+  $http({
+    method: 'DELETE',
+    url: '/confession/' + confession._id
+  }).then(response=>{
+    controller.getConfession();
+  }, function() {
+          console.log('error');
+        });
+};
+
+this.editConfession = function(confession){
+  $http({
+    method: 'PUT',
+    url: '/confession/' + confession._id,
+    data: {
+      category: this.editedCategory,
+      confession: this.editedConfession
+    }
+  }).then(function(response){
+    controller.editedCategory = null;
+    controller.editedConfession = null;
+    controller.getConfession();
+    console.log(response);
+  },function(){
+        console.log('error');
+      });
+};
+
+this.getConfession();
 }]);

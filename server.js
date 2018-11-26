@@ -1,38 +1,40 @@
 const express = require('express')
 const app = express();
 const mongoose = require('mongoose')
-const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
+// const session = require('express-session')
+// const MongoStore = require('connect-mongo')(session)
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'Confession';
 
 app.use(express.json());
 app.use(express.static("public"));
-app.use(session({
-    store: new MongoStore({
-      url: MONGODB_URI,
-      ttl: 1200000
-    }),
-    secret:'feedmeseymour',
-    resave: false,
-    saveUninitialized: false
-}));
-app.use(function(req, res, next) {
-  res.locals.currentUser = req.session.currentUser;
-  next();
-});
+// app.use(session({
+//     store: new MongoStore({
+//       url: MONGODB_URI,
+//       ttl: 1200000
+//     }),
+//     secret:'feedmeseymour',
+//     resave: false,
+//     saveUninitialized: false
+// }));
+// app.use(function(req, res, next) {
+//   res.locals.currentUser = req.session.currentUser;
+//   next();
+// });
 app.use(express.urlencoded({extended:false}));
 
 
-// const outfitsController = require('./controllers/outfits.js');
-// app.use('/outfits', outfitsController);
-
-const userController = require('./controllers/users.js')
-app.use('/users', userController);
 
 
-const sessionsController = require('./controllers/sessions.js');
-app.use('/sessions', sessionsController);
+// const userController = require('./controllers/users.js')
+// app.use('/users', userController);
+
+const confessionsController =
+require('./controllers/post.js')
+app.use('/confession', confessionsController);
+
+// const sessionsController = require('./controllers/sessions.js');
+// app.use('/sessions', sessionsController);
 
 const db = mongoose.connection;
 

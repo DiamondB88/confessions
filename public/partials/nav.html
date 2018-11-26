@@ -1,7 +1,11 @@
-<div class="main-nav">
-  <ul class="nav nav-pills nav-fill">
-    <li class="nav-item"><a href="#"><h5 ng-click ="ctrl.changeInclude('register')">Register</h5></a></li>
-    <!-- <li class="nav-item"><a href="#"><h5 ng-click ="ctrl.changeInclude('home')">Home</h5></a></li> -->
-    <li class="nav-item"><a href="#"><h5 ng-click ="ctrl.changeInclude('log-in')">Log In</h5></a></li>
+<nav>
+  <h3>Confessions</h3>
+  <ul class="nav nav-pills">
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="lnr lnr-menu"></span></a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#" ng-click="ctrl.changeInclude('home')">HOME</a>
+      <a class="dropdown-item" href="#" ng-click="ctrl.changeInclude('about')">ABOUT</a>
+      <a class="dropdown-item" href="#" ng-click="ctrl.changeInclude('submit')">SUBMIT CONFESSION</a>
+    </div></li>
   </ul>
-</div>
+</nav>

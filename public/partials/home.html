@@ -1,3 +1,10 @@
-<div class="title">
- <h1>Confessions /:</h1>
- <span>a</span><span>&nbsp;</span><span>statement</span><span>&nbsp;</span><span>acknowledging</span><span>&nbsp;</span><span>some</span><span>&nbsp;</span><span>personal</span><span>&nbsp;</span><span>fact</span><span>&nbsp;</span><span>that</span><span>&nbsp;</span><span>the</span><span>&nbsp;</span><span>person</span><span>&nbsp;</span><span>would</span><span>&nbsp;</span><span>ostensibly</span><span>&nbsp;</span><span>prefer</span><span>&nbsp;</span><span>to</span><span>&nbsp;</span><span>keep</span><span>&nbsp;</span><span>hidden.</span>
+<div class="container">
+  <div class="confess-box" ng-repeat="confession in confessions">
+    <div class="confess-category">
+      {{confession.category}}
+    </div>
+    <div class="confession">
+      {{confession.confession}}
+    </div>
+  </div>
+</div>

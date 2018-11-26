@@ -1,0 +1,21 @@
+<div class="confess-form">
+  <form ng-submit="ctrl.confess()">
+    <h2>Submit Confession</h2>
+    <p>Category</p>
+    <select name="category" ng-model="ctrl.category">
+      <option value="a-dream"> A Dream</option>
+      <option value="a-fantasy">A Fantasy</option>
+      <option value="first-experience">First Experience</option>
+      <option value="a-guilt">A Guilt</option>
+      <option value="a-lie">A Lie</option>
+      <option value="a-pain">A Pain</option>
+      <option value="random">A Random feeling</option>
+      <option value="a-truth">A Truth</option>
+      <option value="wild">A Wild Experience</option>
+      <option value="other">Other</option>
+      <p>Confession</p>
+      <textarea name="confession" ng-model="ctrl.confession"></textarea>
+      <input type="submit" value="Confess" ng-click="ctrl.changeInclude('home')">
+    </select>
+  </form>
+</div>
