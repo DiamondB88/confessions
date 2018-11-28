@@ -135,7 +135,7 @@ nav{
 }
 .confess-box:hover{
   transform: scale(1.1);
- transition: 1s ease-in-out;
+ transition: .5s ease-in-out;
 }
 .confess-box p{
   text-align: center;
