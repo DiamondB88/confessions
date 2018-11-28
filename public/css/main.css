@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://www.vineyardranchseniorliving.com/wp-content/uploads/2015/09/vintage-texture-bg.jpg);
+  background-size: cover;
+}
+header{
+  background: rgb(2, 29, 98);
+  color: white;
+  margin-bottom: -1vh;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+header h1:hover{
+  cursor: pointer;
+}
+
+.block{
+  padding: 2%;
+  /* margin-left: 30vw; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 10px
+}
+
+nav{
+  margin-top: -2vh;
+  /* display: flex; */
+  background: rgb(2, 29, 98);
+  min-height: 10vw;
+}
+.navbar-brand{
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+}
+/* nav p{
+  font-family: sans-serif;
+  font-size: 10px;
+  display: inline-block;
+}*/
+.text {
+  /* font-family: sans-serif;
+  font-size: 10px;
+  display: inline-block;
+  width: 285px;
+  text-align: left;
+  height: 62px;
+  vertical-align: -2px; */
+}
+
+.text > div {
+  font-size:0px;
+  opacity: 0;
+  margin-top:-30px;
+  position:absolute;
+}
+
+.text > div:nth-child(1) {
+  animation: roll 5s linear infinite 0s;
+}
+.text > div:nth-child(2) {
+  animation: roll 5s linear infinite 1s;
+}
+.text > div:nth-child(3) {
+  animation: roll 5s linear infinite 2s;
+}
+.text > div:nth-child(4) {
+  animation: roll 5s linear infinite 3s;
+}
+
+@keyframes roll {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-top:-30px;
+  }
+  3% {
+    opacity:1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size:inherit;
+    opacity:1;
+    margin-top:0px;
+  }
+  20% {
+    font-size:inherit;
+    opacity:1;
+    margin-top:0px;
+  }
+  27% {
+    font-size:0px;
+    opacity: 0.5;
+    margin-top:100px;
+  }
+  100% {
+    font-size:0px;
+    opacity:0;
+    margin-top:-30px;
+  }
+}
+/* nav span{
+  color: white;
+} */
+/* .nav-pills{
+  background: rgba(255, 0, 0, 0.0);
+}
+.dropdown-menu{
+  background: slategray;
+}
+.dropdown-item{
+  color: white;
+} */
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15vh;
+  justify-content: space-around;
+  /* white-space: normal; */
+  /* overflow: hidden; */
+}
+.confess-box{
+  margin-top: 2vh;
+  width: 20vw;
+  height: auto;
+  border: 2px solid black;
+  /* border-radius: 10px; */
+  white-space: normal;
+  overflow: hidden;
+  box-shadow: 1px 2px 20px 0 #000000;
+}
+.confess-box p{
+  text-align: center;
+  margin: 5%;
+  width:auto;
+  height: auto;
+  white-space: normal;
+  overflow: hidden;
+}
+.confess-box span{
+  text-align: center;
+  margin: 5%;
+}
+.lnr-pencil{
+  color: rgb(168, 111, 64);
+}
+.lnr-cross{
+  color: rgb(218, 43, 43);
+  font-weight: bolder;
+}
+.lnr-thumbs-up{
+  color: rgb(86, 233, 42);
+}
+.confess-category{
+  border: 1px solid black;
+  color: white;
+  /* margin-top:-6vh;
+  min-height: 30%; */
+}
+
+.dream{
+  background: rgba(64, 57, 203, 0.79);
+}
+.fantasy{
+  background: rgba(207, 44, 98, 0.81);
+}
+.first{
+  background: rgba(36, 145, 254, 0.72);
+}
+.guilt{
+  background: rgba(222, 18, 61, 0.77);
+}
+.lie{
+  background: rgba(232, 151, 30, 0.87);
+}
+.pain{
+  background: rgb(252, 1, 16);
+}
+.random{
+  background: rgba(62, 230, 150, 0.79);
+}
+.truth{
+  background-color: rgba(102, 244, 239, 0.87);
+}
+.wild{
+  background: rgba(158, 255, 91, 0.86);
+}
+.other{
+  background: rgba(0, 15, 0, 0.47);
+}
+.confess-form{
+  margin: 10vw;
+  width: 70vw;
+  min-height: 50vh;
+  border: 2px solid black;
+  text-align: center;
+  background: midnightblue;
+  box-shadow: -1px 0px 26px -1px rgba(0,0,0,0.75);
+  padding-bottom: 2%;
+}
+.confess-form h2{
+  background: white;
+  color: midnightblue;
+}
+.confess-form p{
+  color: white;
+}
+textarea{
+  margin-bottom: 2%;
+  resize: both;
+}
+input[type=submit]{
+ box-shadow: -1px 0px 26px -1px rgba(252, 252, 252, 0.69);
+}
+
+.about{
+  text-align: center;
+  padding: 5%;
+}

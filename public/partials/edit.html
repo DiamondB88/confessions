@@ -1,0 +1,21 @@
+<div class="confess-form" ng-if="$index === ctrl.indexOfEditFormToShow">
+  <form ng-submit="ctrl.editConfession(confession)">
+    <h2>Edit Confession</h2>
+    <p>Category</p>
+    <select name="category form-control form-control-lg" ng-model="ctrl.editedCategory">
+      <option value="a dream"> A Dream</option>
+      <option value="a fantasy">A Fantasy</option>
+      <option value="first experience">First Experience</option>
+      <option value="a guilt">A Guilt</option>
+      <option value="a lie">A Lie</option>
+      <option value="a pain">A Pain</option>
+      <option value="random">A Random feeling</option>
+      <option value="a truth">A Truth</option>
+      <option value="wild">A Wild Experience</option>
+      <option value="other">Other</option>
+      </select><br>
+      <p>Confession</p><br>
+      <textarea name="confession" ng-model="ctrl.editedConfession"></textarea><br>
+      <input type="submit" value="Edit Confession">
+  </form>
+</div>

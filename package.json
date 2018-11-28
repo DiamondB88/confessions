@@ -2,7 +2,7 @@
   "name": "confessions",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,11 +17,8 @@
   },
   "homepage": "https://github.com/DiamondB88/confessions#readme",
   "dependencies": {
-    "bcrypt": "^3.0.2",
     "connect-mongo": "^2.0.1",
     "express": "^4.16.4",
-    "express-session": "^1.15.6",
-    "mongoose": "^5.3.6",
-    "session-mongoose": "^0.5.2"
+    "mongoose": "^5.3.6"
   }
 }

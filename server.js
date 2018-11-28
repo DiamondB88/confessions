@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // const session = require('express-session')
 // const MongoStore = require('connect-mongo')(session)
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'Confession';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'confessions';
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -30,8 +30,8 @@ app.use(express.urlencoded({extended:false}));
 // app.use('/users', userController);
 
 const confessionsController =
-require('./controllers/post.js')
-app.use('/confession', confessionsController);
+require('./controllers/confession.js')
+app.use('/confessions', confessionsController);
 
 // const sessionsController = require('./controllers/sessions.js');
 // app.use('/sessions', sessionsController);

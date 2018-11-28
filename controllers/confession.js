@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Confession = require('../models/post.js');
+const Confession = require('../models/confession.js');
 
 router.get('/', (req, res)=> {
   Confession.find({}, (err, foundConfession)=> {

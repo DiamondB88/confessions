@@ -1,10 +1,12 @@
 <div class="container">
-  <div class="confess-box" ng-repeat="confession in confessions">
-    <div class="confess-category">
+  <div class="confess-box" ng-repeat="confession in ctrl.confessions">
+    <div ng-class="confession.category" class="confess-category card-header">
       {{confession.category}}
     </div>
-    <div class="confession">
-      {{confession.confession}}
-    </div>
+    <div>
+      <p>{{confession.confession}}</p>
+      <span class="lnr lnr-pencil" ng-click="ctrl.changeInclude('edit'); ctrl.testConfession(confession)"></span>
+      <span class="lnr lnr-cross" ng-click="ctrl.deleteConfession(confession)"></span>
+      <span class="lnr lnr-thumbs-up" ng-click="ctrl.increaseLikes(confession)">{{confession.likes}}</span>
   </div>
 </div>

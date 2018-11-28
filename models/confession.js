@@ -6,10 +6,14 @@ category:{
   type:String,
   required: true
 },
-confess:{
+confession:{
   type: String,
   required: true
 },
+likes:{
+  type:Number,
+  default: 0
+}
 });
 
 const Confession = mongoose.model('Confession', confession);

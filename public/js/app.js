@@ -17,6 +17,7 @@ console.log(this.changeNavPath);
 };
 
     const controller = this;
+    const confession = null;
 
 
 
@@ -29,7 +30,7 @@ this.displayHide = () => {
 this.confess= function(){
     $http({
       method: 'POST',
-      url: '/confession',
+      url: '/confessions',
       data: {
         category: this.category,
         confession: this.confession
@@ -39,8 +40,8 @@ this.confess= function(){
       controller.changeInclude('home')
       controller.category = null;
       controller.confession = null;
-    }, function(){
-        console.log('error');
+    }, function(error){
+        console.log(error);
       });
   };
 
@@ -59,7 +60,7 @@ this.getConfession = function(){
 this.deleteConfession = function(confession){
   $http({
     method: 'DELETE',
-    url: '/confession/' + confession._id
+    url: '/confessions/' + confession._id
   }).then(response=>{
     controller.getConfession();
   }, function() {
@@ -67,10 +68,10 @@ this.deleteConfession = function(confession){
         });
 };
 
-this.editConfession = function(confession){
+this.editConfession = function(){
   $http({
     method: 'PUT',
-    url: '/confession/' + confession._id,
+    url: '/confessions/' + this.confession._id,
     data: {
       category: this.editedCategory,
       confession: this.editedConfession
@@ -84,6 +85,27 @@ this.editConfession = function(confession){
         console.log('error');
       });
 };
+
+  this.increaseLikes = function(confession){
+    controller.likes += 1
+    $http({
+      method: 'PUT',
+      url: '/confessions/' + confession._id,
+      data: {likes: confession.likes}
+    }).then(function(response){
+    }, function(error){
+        console.log(error);
+      })
+  }
+
+
+this.showEditForm = (index) => {
+   this.indexOfEditFormToShow =index
+ }
+ this.testConfession = function (confession){
+   this.confession = confession
+   console.log(confession);
+ }
 
 this.getConfession();
 }]);
