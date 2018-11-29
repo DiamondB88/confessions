@@ -18,7 +18,7 @@
      _captchaTries++;
      if (_captchaTries > 9)
          return;
-     if (document.getElementsByClassName(‘g-recaptcha’).length > 0) {
+     if (document.getElementsByClassName('g-recaptcha').length > 0) {
          grecaptcha.render("recaptcha", {
              sitekey: '6LePr30UAAAAAIUgqPiC7guERBSakhPfnZY9QBl4',
              callback: function() {
