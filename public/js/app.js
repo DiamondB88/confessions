@@ -87,11 +87,23 @@ this.editConfession = function(){
 };
 
   this.increaseLikes = function(confession){
-    controller.likes += 1
+    confession.likes += 1
     $http({
       method: 'PUT',
       url: '/confessions/' + confession._id,
       data: {likes: confession.likes}
+    }).then(function(response){
+    }, function(error){
+        console.log(error);
+      })
+  }
+
+  this.decreaseLikes = function(confession){
+    confession.dislikes -= 1
+    $http({
+      method: 'PUT',
+      url: '/confessions/' + confession._id,
+      data: {dislikes: confession.dislikes}
     }).then(function(response){
     }, function(error){
         console.log(error);

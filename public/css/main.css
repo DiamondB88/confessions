@@ -159,6 +159,9 @@ nav{
 .lnr-thumbs-up{
   color: rgb(86, 233, 42);
 }
+.lnr-thumbs-down{
+  color: red;
+}
 .confess-category{
   border: 1px solid black;
   color: white;
