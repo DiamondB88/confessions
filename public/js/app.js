@@ -119,22 +119,6 @@ this.showEditForm = (index) => {
    console.log(confession);
  }
 
- var _captchaTries = 0;
-function recaptchaOnload() {
-    _captchaTries++;
-    if (_captchaTries > 9)
-        return;
-    if ($('.g-recaptcha').length > 0) {
-        grecaptcha.render("recaptcha", {
-            sitekey: '6LePr30UAAAAAIUgqPiC7guERBSakhPfnZY9QBl4',
-            callback: function() {
-                console.log('recaptcha callback');
-            }
-        });
-        return;
-    }
-    window.setTimeout(recaptchaOnload, 1000);
-}
 
 this.getConfession();
 }]);

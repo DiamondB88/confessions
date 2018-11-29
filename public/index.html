@@ -12,6 +12,24 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <link rel="stylesheet" href="/css/main.css">
+  <script type="text/javascript">
+  var _captchaTries = 0;
+ function recaptchaOnload() {
+     _captchaTries++;
+     if (_captchaTries > 9)
+         return;
+     if (document.getElementsByClassName(‘g-recaptcha’).length > 0) {
+         grecaptcha.render("recaptcha", {
+             sitekey: '6LePr30UAAAAAIUgqPiC7guERBSakhPfnZY9QBl4',
+             callback: function() {
+                 console.log('recaptcha callback');
+             }
+         });
+         return;
+     }
+     window.setTimeout(recaptchaOnload, 1000);
+ }
+  </script>
   <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaOnload&render=explicit' async defer></script>
 </head>
 
