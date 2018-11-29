@@ -52,8 +52,8 @@ this.getConfession = function(){
     }).then(response=>{
       controller.confessions = response.data
       console.log(response.data);
-    }, function(){
-        console.log('error');
+    }, function(error){
+        console.log(error);
       });
 }
 
